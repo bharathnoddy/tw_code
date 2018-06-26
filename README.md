@@ -34,7 +34,8 @@ https://<IP of the tomcat server>:8443/companyNews
 ```
 
 **SCALING THE APPLICATION IF REQUIRED :**
-This can be taken care via Manual or automated process.
+* This can be taken care via Manual or automated process.
+
 **Manual Process :**
  * We can host multiple application server across different AZ's and put these server behind a load balancer. In case if we feel line the application server needs scaling then we can add one more applications server and add it to the LB
 
