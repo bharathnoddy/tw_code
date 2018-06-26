@@ -1,4 +1,4 @@
-###OVERVIEW
+# OVERVIEW
 * This terraform code assumes that the AWS security group , VPC , AMI , Region , keys etc already available in AWS. These variables can be changed in variables.tf
 
 
@@ -8,20 +8,20 @@
 
 
 
+**DEPLOYING THE WEB SERVER:**
+* clone the repo
+* go into the static directory and fire the following commands (assumed that terraform is installed and you have your AWS secret keys. Also make sure you change the private keys location in main.tf )
 ```
-DEPLOYING THE WEB SERVER:
---clone the repo
---go into the static directory and fire the following commands (assumed that terraform is installed and you have your AWS secret keys. Also make sure you change the private keys location in main.tf )
 #terraform init
 #terraform plan
 #terraform apply
-
---Make a not of the IP address displayed once the apply is complete
 ```
 
+* Make a note of the IP address displayed once the apply is complete
+
+**DEPLOYING THE APPLICATION SERVER:**
+* Go into the app directory and fist change the "IP" variable inside app/filelist/user_data.sh with your static servers IP
 ```
-DEPLOYING THE APPLICATION SERVER:
---Go into the app directory and fist change the "IP" variable inside app/filelist/user_data.sh with your static servers IP
 #terraform init
 #terraform plan
 #terraform apply
@@ -33,13 +33,10 @@ Both your web server and the application server are up now.You should be able to
 https://<IP of the tomcat server>:8443/companyNews   
 ```
 
-```
-SCALING THE APPLICATION IF REQUIRED :
+**SCALING THE APPLICATION IF REQUIRED :**
 This can be taken care via Manual or automated process.
---Manual Process :
- We can host multiple application server across different AZ's and put these server behind a load balancer.
- in case if we feel line the application server needs scaling then we can add one more applications server and add it to the LB
+**Manual Process :**
+ * We can host multiple application server across different AZ's and put these server behind a load balancer. In case if we feel line the application server needs scaling then we can add one more applications server and add it to the LB
 
- --Automatic Process:
- We can use Autoscaling here.The application server can be launched using Autoscaling with the desired number of application server behind a LB.We can configure some triggers like autoscaling should start the deploy more applications servers in case some application server goes down or if there is heavy load in the server 
-```
+ **Automatic Process:**
+*  We can use Autoscaling here.The application server can be launched using Autoscaling with the desired number of application server behind a LB.We can configure some triggers like autoscaling should start the deploy more applications servers in case some application server goes down or if there is heavy load in the server 
