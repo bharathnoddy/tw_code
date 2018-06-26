@@ -1,5 +1,5 @@
-##OVERVIEW
-This terraform code assumes that the AWS security group , VPC , AMI , Region , keys etc already available in AWS. These variables can be changed in variables.tf
+###OVERVIEW
+* This terraform code assumes that the AWS security group , VPC , AMI , Region , keys etc already available in AWS. These variables can be changed in variables.tf
 
 
 * I have used terraform code to build the infrastructure . The code under static will built the webserver which will hold the "static" content  and the code under "app" will hold the war file and its basically a tomcat server.
