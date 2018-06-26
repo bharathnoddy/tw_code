@@ -1,14 +1,11 @@
-```
+##OVERVIEW
 This terraform code assumes that the AWS security group , VPC , AMI , Region , keys etc already available in AWS. These variables can be changed in variables.tf
-```
 
 
-```
---I have used terraform code to build the infrastructure . The code under static will built the webserver which will hold the "static" content  and the code under "app" will hold the war file and its basically a tomcat server.
---For configuring these two server I have used a shell script which can be found under "static/filelist/user_data.sh" and "app/filelist/user_data.sh". Ideally some configuration management tools like Puppet or Ansible should have been used here to deal with the configuration part but since this is not the part of the assignment I went ahead with this simple Bash script.
---The only manual part here is once the static server is deployed we have to update the IP address of this server into "app/filelist/user_data.sh" under the "IP" variable before deploying the application webserver. This manual step can be avoided if we had DNS server in place since I am using this IP just to refer the static content from the application server.
+* I have used terraform code to build the infrastructure . The code under static will built the webserver which will hold the "static" content  and the code under "app" will hold the war file and its basically a tomcat server.
+* For configuring these two server I have used a shell script which can be found under "static/filelist/user_data.sh" and "app/filelist/user_data.sh". Ideally some configuration management tools like Puppet or Ansible should have been used here to deal with the configuration part but since this is not the part of the assignment I went ahead with this simple Bash script.
+* The only manual part here is once the static server is deployed we have to update the IP address of this server into "app/filelist/user_data.sh" under the "IP" variable before deploying the application webserver. This manual step can be avoided if we had DNS server in place since I am using this IP just to refer the static content from the application server.
 
-```
 
 
 ```
